@@ -42,6 +42,7 @@ Rails.application.routes.draw do
 
   # CREATE
   post("/insert_vendor", { :controller => "vendors", :action => "create" })
+  #get("/add_vendor", { :controller => "vendors", :aciton => "add" })
           
   # READ
   get("/vendors", { :controller => "vendors", :action => "index" })
