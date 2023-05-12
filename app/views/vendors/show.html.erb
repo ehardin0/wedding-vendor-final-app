@@ -1,0 +1,146 @@
+<div>
+  <div>
+    <h1>
+      Vendor #<%= @the_vendor.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/vendors">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_vendor/<%= @the_vendor.id %>">
+          Delete vendor
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Name
+      </dt>
+      <dd>
+        <%= @the_vendor.name %>
+      </dd>
+
+      <dt>
+        Category
+      </dt>
+      <dd>
+        <%= @the_vendor.category %>
+      </dd>
+
+      <dt>
+        Description
+      </dt>
+      <dd>
+        <%= @the_vendor.description %>
+      </dd>
+
+      <dt>
+        Website
+      </dt>
+      <dd>
+        <%= @the_vendor.website %>
+      </dd>
+
+      <dt>
+        Geography
+      </dt>
+      <dd>
+        <%= @the_vendor.geography %>
+      </dd>
+
+      <dt>
+        Comments count
+      </dt>
+      <dd>
+        <%= @the_vendor.comments_count %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_vendor.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_vendor.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit vendor
+    </h2>
+
+    <form action="/modify_vendor/<%= @the_vendor.id %>"  method="post" >
+      <div>
+        <label for="name_box">
+          Name
+        </label>
+
+        <input type="text" id="name_box" name="query_name" value="<%= @the_vendor.name %>">
+      </div>
+
+      <div>
+        <label for="category_box">
+          Category
+        </label>
+
+        <input type="text" id="category_box" name="query_category" value="<%= @the_vendor.category %>">
+      </div>
+
+      <div>
+        <label for="description_box">
+          Description
+        </label>
+
+        <textarea id="description_box" name="query_description"><%= @the_vendor.description %></textarea>
+      </div>
+
+      <div>
+        <label for="website_box">
+          Website
+        </label>
+
+        <input type="text" id="website_box" name="query_website" value="<%= @the_vendor.website %>">
+      </div>
+
+      <div>
+        <label for="geography_box">
+          Geography
+        </label>
+
+        <input type="text" id="geography_box" name="query_geography" value="<%= @the_vendor.geography %>">
+      </div>
+
+      <div>
+        <label for="comments_count_box">
+          Comments count
+        </label>
+
+        <input type="text" id="comments_count_box" name="query_comments_count" value="<%= @the_vendor.comments_count %>">
+      </div>
+
+      <button>
+        Update vendor
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
