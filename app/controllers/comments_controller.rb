@@ -21,13 +21,13 @@ class CommentsController < ApplicationController
     the_comment = Comment.new
     the_comment.body = params.fetch("query_body")
     the_comment.vendor_id = params.fetch("query_vendor_id")
-    the_comment.author_id = params.fetch("query_author_id")
+    the_comment.author_id = session.fetch(:user_id)
 
     if the_comment.valid?
       the_comment.save
-      redirect_to("/comments", { :notice => "Comment created successfully." })
+      redirect_to("/vendors/#{the_comment.vendor_id}", { :notice => "Review added successfully."} )
     else
-      redirect_to("/comments", { :alert => the_comment.errors.full_messages.to_sentence })
+      redirect_to("/vendors/#{the_comment.vendor_id}", { :alert => the_comment.errors.full_messages.to_sentence })
     end
   end
 
@@ -53,6 +53,6 @@ class CommentsController < ApplicationController
 
     the_comment.destroy
 
-    redirect_to("/comments", { :notice => "Comment deleted successfully."} )
+    redirect_to("/vendors/#{the_comment.vendor_id}", { :notice => "Comment deleted successfully."} )
   end
 end

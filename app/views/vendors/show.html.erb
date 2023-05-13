@@ -57,6 +57,55 @@
 </div>
 
 <hr>
+<h2>Reviews & Comments</h2>
+
+<table>
+  <tr>
+    <th>Reviewer</th>
+    <th>Review</th>
+    <th>Posted</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% @the_vendor.comments.each do |comment| %>
+  <tr>
+    <td>
+      <%= comment.author.first_name %>
+    </td>
+
+    <td>
+      <%= comment.body %>
+    </td>
+
+    <td>
+      <%= comment.created_at %>
+    </td>
+
+  <% if comment.author.id == session.fetch( :user_id )%>
+    <td>
+      <a href="/delete_comment/<%= comment.id %>;">
+        Delete this comment
+      </a>
+    </td>    
+  <% end %>
+  
+ <% end %>
+</table>
+
+<h3>Add a Review</h3>
+
+<form action="/insert_comment" method="post">
+  <input id="query_vendor_id" type="hidden" value="<%= @the_vendor.id %>" name="query_vendor_id">
+
+  <label for="query_body">Review</label>
+  <textarea id="query_body" name="query_body" placeholder="Enter a review..."></textarea>
+
+  <button>Add Review</button>
+</form>
+
+</hr>
+<hr>
 
 
 <div>

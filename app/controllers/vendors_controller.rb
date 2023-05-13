@@ -7,6 +7,10 @@ class VendorsController < ApplicationController
 
     redirect_to("/bookmarks", { :notice => "Bookmark created successfully." })
   end
+
+  def comments
+    return Comment.where({ :vendor_id => self.id })
+  end
   
   def index
     matching_vendors = Vendor.all

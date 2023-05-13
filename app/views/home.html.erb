@@ -1,1 +1,30 @@
-<h1>Hi</h1>
+<h1>Welcome!</h1>
+
+<p>
+<h3>Explore Wedding Vendors</h3>
+      <li>
+        <a href="/vendors">All Vendors</a>
+      </li>
+      <li>
+        <a href="/add_vendor">Add a Vendor</a>
+      </li>
+</p>
+
+
+<p>
+    <h3>Build YOUR Wedding Vendor Team</h3>
+  <% if session.fetch(:user_id) == nil %>
+      <li>
+        <a href="/user_sign_up">Sign Up</a>
+      </li>
+      <li>
+        <a href="/user_sign_in">Sign In</a>
+      </li>
+
+      <% else %>
+      <li>
+        <a href="/bookmarks">Saved Vendors</a>
+      </li>
+      <% end %>
+    </li>
+</p>
