@@ -57,8 +57,25 @@
             Show details
           </a>
         </td>
+    <% if @current_user != nil %>
+        <td>
+          <% current_user_bookmarks = Bookmark.where({ :vendor_id => a_vendor.id}).where({ :fan_id => session.fetch(:user_id) }) %>
 
-        
+          <% the_bookmark = current_user_bookmarks.at(0) %>
+
+          <% if current_user_bookmarks.count == 0 %>
+            <form action="/add_bookmark">
+      
+            <input type="hidden" name="the_vendor_id" value="<%= a_vendor.id %>">
+            <button>Save to Favorites</button>
+            </form>
+         <% else %>
+
+          <a href="/delete_bookmark/<%= the_bookmark.id %>">Remove from Favorites</a>
+          <% end %>
+          </td>
+    <% end %>
+      
       </tr>
       <% end %>
     </table>
