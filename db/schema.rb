@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_05_12_233550) do
+ActiveRecord::Schema.define(version: 2023_05_13_140638) do
 
   create_table "bookmarks", force: :cascade do |t|
     t.integer "fan_id"
@@ -33,6 +33,8 @@ ActiveRecord::Schema.define(version: 2023_05_12_233550) do
     t.integer "bookmarks_count"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "first_name"
+    t.string "last_name"
   end
 
   create_table "vendors", force: :cascade do |t|

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   # CREATE
   post("/insert_bookmark", { :controller => "bookmarks", :action => "create" })
+  get("/add_bookmark", { :controller => "vendors", :action => "add_use_bookmark" })
           
   # READ
   get("/bookmarks", { :controller => "bookmarks", :action => "index" })
@@ -42,9 +43,9 @@ Rails.application.routes.draw do
 
   # CREATE
   post("/insert_vendor", { :controller => "vendors", :action => "create" })
-  #get("/add_vendor", { :controller => "vendors", :aciton => "add" })
           
   # READ
+  get("/add_vendor", { :controller => "vendors", :action => "add" })
   get("/vendors", { :controller => "vendors", :action => "index" })
   
   get("/vendors/:path_id", { :controller => "vendors", :action => "show" })

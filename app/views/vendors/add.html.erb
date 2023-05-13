@@ -1,76 +1,7 @@
-<div>
-  <div>
-    <h1>
-      Wedding Vendors
-    </h1>
-  </div>
-</div>
+<h1>Not finding a new wedding vendor? Add them here!</hi>
 
-<hr>
-
-<div>
-  <div>
-    <table border="1">
-
-        <th>
-          Name
-        </th>
-
-        <th>
-          Category
-        </th>
-
-        <th>
-          Geography
-        </th>
-
-        <th>
-          Description
-        </th>
-
-        <th>
-          More Details
-        </th>
-      </tr>
-
-      <% @list_of_vendors.each do |a_vendor| %>
-      <tr>
-
-        <td>
-          <%= a_vendor.name %>
-        </td>
-
-        <td>
-          <%= a_vendor.category %>
-        </td>
-
-        <td>
-          <%= a_vendor.geography %>
-        </td>
-
-        <td>
-          <%= a_vendor.description %>
-        </td>
-
-        <td>
-          <a href="/vendors/<%= a_vendor.id %>">
-            Show details
-          </a>
-        </td>
-
-        
-      </tr>
-      <% end %>
-    </table>
-  </div>
-</div>
-
-<hr>
-
-<div>
-  <div>
-    <h2>
-      Add a new vendor
+<h2>
+      Found a new wedding vendor? Add them here!
     </h2>
 
     <form action="/insert_vendor" method="post">
@@ -118,5 +49,3 @@
         Create vendor
       </button>
     </form>
-  </div>
-</div>

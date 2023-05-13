@@ -1,4 +1,13 @@
 class VendorsController < ApplicationController
+  def add_use_bookmark
+    b = Bookmark.new
+    b.fan_id = session.fetch(:user_id)
+    b.vendor_id = params.fetch("the_vendor_id")
+    b.save
+
+    redirect_to("/bookmarks", { :notice => "Bookmark created successfully." })
+  end
+  
   def index
     matching_vendors = Vendor.all
 
@@ -24,7 +33,6 @@ class VendorsController < ApplicationController
     the_vendor.description = params.fetch("query_description")
     the_vendor.website = params.fetch("query_website")
     the_vendor.geography = params.fetch("query_geography")
-    the_vendor.comments_count = params.fetch("query_comments_count")
 
     if the_vendor.valid?
       the_vendor.save
@@ -33,6 +41,10 @@ class VendorsController < ApplicationController
       redirect_to("/vendors", { :alert => the_vendor.errors.full_messages.to_sentence })
     end
   end
+
+  def add
+    render({ :template => "vendors/add.html.erb" })
+  end  
 
   def update
     the_id = params.fetch("path_id")
@@ -43,7 +55,6 @@ class VendorsController < ApplicationController
     the_vendor.description = params.fetch("query_description")
     the_vendor.website = params.fetch("query_website")
     the_vendor.geography = params.fetch("query_geography")
-    the_vendor.comments_count = params.fetch("query_comments_count")
 
     if the_vendor.valid?
       the_vendor.save

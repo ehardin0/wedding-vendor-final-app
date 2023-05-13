@@ -1,4 +1,10 @@
 class BookmarksController < ApplicationController
+  before_action(:load_current_user)
+
+  def load_current_user
+    @current_user = User.where({ :id => session[:user_id] }).at(0)
+  end
+  
   def index
     matching_bookmarks = Bookmark.all
 
@@ -19,7 +25,7 @@ class BookmarksController < ApplicationController
 
   def create
     the_bookmark = Bookmark.new
-    the_bookmark.fan_id = params.fetch("query_fan_id")
+    the_bookmark.fan_id = self.load_current_user.id
     the_bookmark.vendor_id = params.fetch("query_vendor_id")
 
     if the_bookmark.valid?
