@@ -1,17 +1,21 @@
 <h1 class="mx-auto" style="width: 200px;">Welcome!</h1>
 
 <p>
-<h3>Explore Wedding Vendors</h3>
-      <ul>
-        <a href="/vendors">All Vendors</a>
-      </ul>
-      <ul>
-        <a href="/add_vendor">Add a Vendor</a>
-      </ul>
+
+<div class="container">
+<img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8d2VkZGluZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Wedding">
+  <button class="btn" type="button" data-bs-toggle="dropdown">Explore Wedding Vendors</button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/vendors">All Vendors</a></li>
+    <li><a class="dropdown-item" href="/add_vendor">Add a Vendor</a></li>
+  </ul>
+</div>
 </p>
 
 
+
 <p>
+    <img src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8d2VkZGluZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Wedding">
     <h3>Build YOUR Wedding Vendor Team</h3>
   <% if session.fetch(:user_id) == nil %>
       <li>
@@ -22,7 +26,7 @@
       </li>
 
       <% else %>
-      <li>
+      <li >
         <a href="/bookmarks">Saved Vendors</a>
       </li>
       <% end %>

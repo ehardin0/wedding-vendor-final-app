@@ -19,8 +19,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Vadodara:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Vadodara:wght@400;500;600;700&display=swap" rel="stylesheet">  
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
   </head>
 
@@ -31,19 +32,20 @@
 
   <div class="d-flex justify-content-between align-items-center">
   <% if session.fetch(:user_id) == nil %>
-      <div>
+      <div class="bi bi-person-fill-add">
         <a href="/user_sign_up">Sign Up</a>
       </div>
-      <div>
+
+      <div class="bi bi-person-fill-check">
         <a href="/user_sign_in">Sign In</a>
       </div>
-      <div>
+      <div class="bi bi-house-gear-fill">
         <a href="/">Home</a>
       </div>
-      <div>
+      <div class="bi bi-building">
         <a href="/vendors">All Vendors</a>
       </div>
-      <div>
+      <div class="bi bi-building-add">
         <a href="/add_vendor">Add a Vendor</a>
       </div>
 
@@ -51,16 +53,16 @@
       <div>
         <a href="/bookmarks">Bookmarks</a>
       </div>
-      <div>
+      <div class="bi bi-person-gear">
         <a href="/user_sign_out">Sign Out</a>
       </div>
-      <div>
+      <div class="bi bi-house-gear-fill">
         <a href="/">Home</a>
       </div>
-      <div>
+      <div class="bi bi-building">
         <a href="/vendors">All Vendors</a>
       </div>
-      <div>
+      <div class="bi bi-building-add">
         <a href="/add_vendor">Add a Vendor</a>
       </div>
     <% end %>
