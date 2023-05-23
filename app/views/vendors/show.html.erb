@@ -60,21 +60,7 @@
 <h2>Reviews & Comments</h2>
 
 <p>
-    <% current_vendor_comments = Comment.where({ :vendor_id => @the_vendor.id}) %>
 
-    <% if current_vendor_comments.count == 0 %>
-
-        <h3>Add a Review</h3>
-
-        <form action="/insert_comment" method="post">
-          <input id="query_vendor_id" type="hidden" value="<%= @the_vendor.id %>" name="query_vendor_id">
-
-          <textarea class="form-control"id="query_body" name="query_body" placeholder="Enter a review..."></textarea>
-
-          <button type="button" class="btn btn-outline-secondary">Add Review</button>
-        </form>
-
-    <% else %>
       <table>
         <tr>
           <th>Reviewer</th>
@@ -108,32 +94,19 @@
             </tr>
           <% end %>
       </table>
+      
       <p>
       <h3>Add a Review</h3>
 
       <form action="/insert_comment" method="post">
         <input id="query_vendor_id" type="hidden" value="<%= @the_vendor.id %>" name="query_vendor_id">
 
-        <textarea class="form-control"id="query_body" name="query_body" placeholder="Enter a review..."></textarea>
+        <textarea class="form-control" id="query_body" name="query_body" placeholder="Enter a review..."></textarea>
 
         <button type="button" class="btn btn-outline-secondary">Add Review</button>
       </form>
       </p>
 
-    <% end %>
-
-      <h3>Add a Review</h3>
-
-      <form action="/insert_comment" method="post">
-        <input id="query_vendor_id" type="hidden" value="<%= @the_vendor.id %>" name="query_vendor_id">
-
-        <textarea class="form-control"id="query_body" name="query_body" placeholder="Enter a review..."></textarea>
-
-        <button type="button" class="btn btn-outline-secondary">Add Review</button>
-      </form>
-      </p>
-
-<p>
 
 <hr>
 

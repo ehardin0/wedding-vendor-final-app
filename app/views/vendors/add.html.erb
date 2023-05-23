@@ -3,47 +3,52 @@
 </h2>
 
     <form action="/insert_vendor" method="post">
-      <div>
-        <label for="name_box">
+      <div class="row mb-3">
+        <label for="name_box" class="col-sm-2 col-form-label">
           Name
         </label>
+        <div class="col-sm-10">
+        <input type="text" id="name_box" name="query_name" class="form-control">
+        </div>
+        </div>
 
-        <input type="text" id="name_box" name="query_name">
-      </div>
-
-      <div>
-        <label for="category_box">
+      <div class="row mb-3">
+        <label for="category_box" class="col-sm-2 col-form-label">
           Category
         </label>
-
-        <input type="text" id="category_box" name="query_category">
+<div class="col-sm-10">
+        <input class="form-control" type="text" id="category_box" name="query_category">
+      </div>
       </div>
 
-      <div>
-        <label for="description_box">
+      <div class="row mb-3">
+        <label for="description_box" class="col-sm-2 col-form-label">
           Description
         </label>
-
-        <textarea id="description_box" name="query_description" rows="3"></textarea>
+<div class="col-sm-10">
+        <textarea class="form-control" id="description_box" name="query_description" rows="3"></textarea>
+      </div>
       </div>
 
-      <div>
-        <label for="website_box">
+      <div class="row mb-3" >
+        <label for="website_box" class="col-sm-2 col-form-label" >
           Website
         </label>
-
-        <input type="text" id="website_box" name="query_website">
+<div class="col-sm-10">
+        <input type="text" id="website_box" name="query_website" class="form-control">
+      </div>
       </div>
 
-      <div>
-        <label for="geography_box">
+      <div class="row mb-3">
+        <label for="geography_box" class="col-sm-2 col-form-label">
           Geography
         </label>
-
-        <input type="text" id="geography_box" name="query_geography">
+<div class="col-sm-10">
+        <input type="text" id="geography_box" name="query_geography" class="form-control">
+      </div>
       </div>
 
-      <button>
+      <button class="btn btn-outline-dark">
         Create vendor
       </button>
     </form>

@@ -3,11 +3,9 @@
 <p>
 <div class="container">
     <div class="row">
-      <div class="column">
-        <div class="col-xs-12 col-sm-6 col-md-8 col-centered">
-          <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8d2VkZGluZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Wedding" class="img-responsive">
+        <div class="col-sm">
+          <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8d2VkZGluZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Wedding" class="img-thumbnail">
 
-        <p>
         <div class="list-group">
           <a href="/vendors" class="list-group-item list-group-item-action">All Vendors</a>
           <a href="/add_vendor" class="list-group-item list-group-item-action">Add a Vendor</a>
@@ -15,11 +13,11 @@
         </p>
       </div>
    
-      <div class="col">
-        <div class="col-xs-12 col-sm-6 col-md-8 col-centered">
-            <img src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8d2VkZGluZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Wedding" class="img-responsive">
 
-          </p>
+      <div class="col-sm">
+            <img src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8d2VkZGluZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Wedding" class="img-thumbnail" >
+
+          
             <% if session.fetch(:user_id) == nil %>
               <div class="list-group">
                 <a class="list-group-item list-group-item-action" href="/user_sign_up">Sign Up</a>
@@ -31,7 +29,7 @@
                 <a class="list-group-item list-group-item-action" href="/bookmarks">Saved Vendors</a>
               </div>
             <% end %>
-          </p>
+          
         </div>
       </div>
     </div>
