@@ -1,34 +1,38 @@
-<h1 class="mx-auto" style="width: 200px;">Welcome!</h1>
+<h1 class="text-center">Welcome!</h1>
 
 <p>
-
 <div class="container">
-<img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8d2VkZGluZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Wedding">
-  <button class="btn" type="button" data-bs-toggle="dropdown">Explore Wedding Vendors</button>
-  <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="/vendors">All Vendors</a></li>
-    <li><a class="dropdown-item" href="/add_vendor">Add a Vendor</a></li>
-  </ul>
-</div>
-</p>
+    <div class="row">
+      <div class="column">
+        <div class="col-xs-12 col-sm-6 col-md-8 col-centered">
+          <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8d2VkZGluZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Wedding" class="img-responsive">
 
+        <p>
+        <div class="list-group">
+          <a href="/vendors" class="list-group-item list-group-item-action">All Vendors</a>
+          <a href="/add_vendor" class="list-group-item list-group-item-action">Add a Vendor</a>
+        </div>
+        </p>
+      </div>
+   
+      <div class="col">
+        <div class="col-xs-12 col-sm-6 col-md-8 col-centered">
+            <img src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8d2VkZGluZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Wedding" class="img-responsive">
 
+          </p>
+            <% if session.fetch(:user_id) == nil %>
+              <div class="list-group">
+                <a class="list-group-item list-group-item-action" href="/user_sign_up">Sign Up</a>
+                <a class="list-group-item list-group-item-action" href="/user_sign_in">Sign In</a>
+              </div>
 
-<p>
-    <img src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8d2VkZGluZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Wedding">
-    <h3>Build YOUR Wedding Vendor Team</h3>
-  <% if session.fetch(:user_id) == nil %>
-      <li>
-        <a href="/user_sign_up">Sign Up</a>
-      </li>
-      <li>
-        <a href="/user_sign_in">Sign In</a>
-      </li>
-
-      <% else %>
-      <li >
-        <a href="/bookmarks">Saved Vendors</a>
-      </li>
-      <% end %>
-    </li>
-</p>
+            <% else %>
+              <div class="list-group">
+                <a class="list-group-item list-group-item-action" href="/bookmarks">Saved Vendors</a>
+              </div>
+            <% end %>
+          </p>
+        </div>
+      </div>
+    </div>
+    
