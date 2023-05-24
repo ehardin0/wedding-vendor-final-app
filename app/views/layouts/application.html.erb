@@ -50,8 +50,9 @@
       </div>
 
       <% else %>
+      <% @current_user = User.where({ :id => session[:user_id] }).at(0) %>
       <div>
-        <a href="/bookmarks">Bookmarks</a>
+        <a href="/bookmarks/<%= @current_user.id %>">Bookmarks</a>
       </div>
       <div class="bi bi-person-gear">
         <a href="/user_sign_out">Sign Out</a>

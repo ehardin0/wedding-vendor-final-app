@@ -6,7 +6,11 @@ class BookmarksController < ApplicationController
   end
   
   def index
-    matching_bookmarks = Bookmark.all
+    the_id = params.fetch("user_id")
+
+    current_user_bookmarks = Bookmark.where({ :fan_id => session[:user_id]})
+
+    matching_bookmarks = current_user_bookmarks.all
 
     @list_of_bookmarks = matching_bookmarks.order({ :created_at => :desc })
 
@@ -14,6 +18,7 @@ class BookmarksController < ApplicationController
   end
 
   def show
+
     the_id = params.fetch("path_id")
 
     matching_bookmarks = Bookmark.where({ :id => the_id })
@@ -30,9 +35,9 @@ class BookmarksController < ApplicationController
 
     if the_bookmark.valid?
       the_bookmark.save
-      redirect_to("/bookmarks", { :notice => "Bookmark created successfully." })
+      redirect_to("/bookmarks/#{the_bookmark.id}", { :notice => "Bookmark created successfully." })
     else
-      redirect_to("/bookmarks", { :alert => the_bookmark.errors.full_messages.to_sentence })
+      redirect_to("/bookmarks/#{the_bookmark.id}", { :alert => the_bookmark.errors.full_messages.to_sentence })
     end
   end
 
@@ -57,6 +62,6 @@ class BookmarksController < ApplicationController
 
     the_bookmark.destroy
 
-    redirect_to("/bookmarks", { :notice => "Bookmark deleted successfully."} )
+    redirect_to("/bookmarks/#{the_bookmark.id}", { :notice => "Bookmark deleted successfully."} )
   end
 end

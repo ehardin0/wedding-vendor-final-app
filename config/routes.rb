@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get("/add_bookmark", { :controller => "vendors", :action => "add_use_bookmark" })
           
   # READ
-  get("/bookmarks", { :controller => "bookmarks", :action => "index" })
+  get("/bookmarks/:user_id", { :controller => "bookmarks", :action => "index" })
   
   get("/bookmarks/:path_id", { :controller => "bookmarks", :action => "show" })
   
