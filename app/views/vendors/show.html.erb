@@ -14,7 +14,7 @@
       <form action="/add_bookmark">
       
         <input type="hidden" name="the_vendor_id" value="<%= @the_vendor.id %>">
-        <button type="button" class="btn btn-outline-secondary">Save Vendor to Favorites!</button>
+        <button class="btn btn-outline-secondary">Save Vendor to Favorites!</button>
       </form>
     <% else %>
 
@@ -60,8 +60,9 @@
 <h2>Reviews & Comments</h2>
 
 <p>
-
-      <table>
+  <% if @the_vendor.comments.count == 0 %>
+  <% else %>
+      <table class="table table-bordered">
         <tr>
           <th>Reviewer</th>
           <th>Review</th>
@@ -94,16 +95,17 @@
             </tr>
           <% end %>
       </table>
+    <% end %>
       
       <p>
-      <h3>Add a Review</h3>
+      <h5>Add a Review</h5>
 
       <form action="/insert_comment" method="post">
         <input id="query_vendor_id" type="hidden" value="<%= @the_vendor.id %>" name="query_vendor_id">
 
         <textarea class="form-control" id="query_body" name="query_body" placeholder="Enter a review..."></textarea>
 
-        <button type="button" class="btn btn-outline-secondary">Add Review</button>
+        <button class="btn btn-outline-secondary">Add Review</button>
       </form>
       </p>
 
@@ -112,9 +114,9 @@
 
 <div>
   <div>
-    <h3>
+    <h5>
       Edit vendor
-    </h3>
+    </h5>
   </div>
 
     <form action="/modify_vendor/<%= @the_vendor.id %>"  method="post" >

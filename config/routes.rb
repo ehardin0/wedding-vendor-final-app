@@ -8,6 +8,8 @@ Rails.application.routes.draw do
           
   # READ
   get("/bookmarks/:user_id", { :controller => "bookmarks", :action => "index" })
+
+  get("/bookmarks", { :controller => "bookmarks", :action => "index" })
   
   get("/bookmarks/:path_id", { :controller => "bookmarks", :action => "show" })
   
